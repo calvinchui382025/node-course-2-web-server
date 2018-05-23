@@ -1,6 +1,8 @@
 const express = require('express'); // import 'express'
 const hbs = require('hbs');    // import 'handlebars'
 const fs = require('fs');     // import 'fs'
+
+const port = process.env.PORT || 3000;  //configure to work with heroku
 //-------------------
 let app = express();
 //-------------------
@@ -52,8 +54,8 @@ app.get('/bad', (request, response) => {  // bad page
 });
 
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000')
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`)
 }); //port
 
 // nodemon server.js -e js,hbs
